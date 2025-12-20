@@ -2,12 +2,14 @@
 
 MouseMode := false
 
-vkF2:: {
+ToggleMouseMode() {
     global MouseMode
     MouseMode := !MouseMode
     ToolTip(MouseMode ? "Mouse Mode ON" : "Mouse Mode OFF")
-    SetTimer(() => ToolTip(), -1000)
+    SetTimer(() => ToolTip(), -500)
 }
+
+LShift & vk1C:: ToggleMouseMode()
 
 #HotIf MouseMode
 
@@ -16,10 +18,21 @@ a:: MouseMove(-10, 0, 0, "R")
 s:: MouseMove(0, 10, 0, "R")
 d:: MouseMove(10, 0, 0, "R")
 
-j:: Click()          ; 左クリック
-k:: Click("Right")   ; 右クリック
+f:: Click()
+j:: Click("Right")
 
 e:: Click("WheelUp")
 q:: Click("WheelDown")
+
+b:: Esc
+
+
+o:: Send "{Up}"
+l:: Send "{Down}"
+k:: Send "{Left}"
+`;:: Send "{Right}"
+
+i:: Backspace
+p:: Delete
 
 #HotIf
