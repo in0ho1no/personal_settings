@@ -1,0 +1,16 @@
+{
+  "autoUpdatesChannel": "latest",
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rundll32 user32.dll,MessageBeep 0"
+          }
+        ]
+      }
+    ]
+  }
+}
